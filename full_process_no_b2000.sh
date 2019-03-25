@@ -98,6 +98,10 @@ fslmerge -t merged_2b0 2"_b0_raw" 49"_b0_dwi"
 echo Adding slices
 fslroi merged_2b0 2b0_extra_slice 0 -1 0 -1 0 58
 
+# removing the two extracted b0 files
+rm 2"_b0_raw"
+rm 49"_b0_dwi"
+
 # creating the right bvecs and bvals
 python extract.py $subject
 
